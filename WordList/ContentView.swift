@@ -9,13 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack{
+            VStack(spacing: 32) {
+                Text("My単語帳")
+                    .font(.largeTitle)
+                
+                NavigationLink{
+                    QuizView()
+                } label:{
+                    Text("QUIZ START")
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .padding(.vertical, 12)
+                        .frame(maxWidth: .infinity)
+                        .background(Color.orange)
+                        .clipShape(.capsule)
+                }
+            }
+            .padding(.horizontal, 60)
         }
-        .padding()
     }
 }
 
